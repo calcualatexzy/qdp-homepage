@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Query-Centric Diffusion Policy for Generalizable Robotic Assembly</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Query-Centric Diffusion Policy for Generalizable Robotic Assembly</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://calcualatexzy.github.io/">Ziyi Xu</a><sup>*</sup><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://hhlin.info/">Haohong Lin</a><sup>*</sup><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://shiqiliu-67.github.io/">Shiqi Liu</a><sup>*</sup><sup>1</sup>,</span>
+            </span>
+            <span class="author-block">
+              <a href="https://safeai-lab.github.io/">Ding Zhao</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Carnegie Mellon University, Mechanical Engineering</span>
+            <span class="author-block"><sup>*</sup>Equal contributions</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span> -->
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="has-text-centered">
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <img src="./static/images/motivation.jpg" alt="Framework" style="width: 100%; height: auto; margin-bottom: 20px;">
+          <h2 class="subtitle has-text-centered">
+            <span class="dnerf"></span> The task nature comprises three parts: objects, contact points, and skill library. <br> An effective assembly policy should identify the correct contact relationship given the assembly context and generate precise action sequences for the robot arm, bridging the gap between intra-part reasoning and inter-part precise control.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The robotic assembly task poses a key challenge in building generalist robots 
+            due to the intrinsic complexity of part interactions and the sensitivity to noise 
+            perturbations in contact-rich settings. 
+            The assembly agent is typically designed in a hierarchical manner: high-level multi-part 
+            reasoning and low-level precise control. 
+          </p>
+          <p>
+            However, implementing such a hierarchical policy is challenging in practice due to the mismatch
+            between high-level skill queries and low-level execution. To address this, we propose the 
+            Query-centric Diffusion Policy (QDP), a hierarchical framework that bridges high-level planning
+            and low-level control by utilizing queries comprising objects, contact points, and skill information. 
+            QDP introduces a query-centric mechanism that identifies task-relevant components and uses them to 
+            guide low-level policies, leveraging point cloud observations to improve the policy's robustness. 
+          </p>
+          <p>
+            We conduct comprehensive experiments on the FurnitureBench in both simulation and real-world settings, 
+            demonstrating improved performance in skill precision and long-horizon success rate. 
+            In the challenging insertion and screwing tasks, QDP improves the skill-wise success rate by over 
+            50% compared to baselines without structured queries.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    
+    <!-- Methodology. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Methodology</h2>
+        <img src="./static/images/overview.jpg" alt="Framework" style="width: 100%; height: auto; margin-bottom: 20px;">
+        <div class="content has-text-justified">
+          <p>
+            The proposed QDP framework adopts a hierarchical structure consisting of a high-level and a low-level policy.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Methodology. -->
+
+    <!-- Paper video. -->
+
+    <div class="container is-max-desktop">
+      <div class="has-text-centered">
+        <h2 class="title is-3">Video Summary</h2>
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <video controls style="width: 80%;">
+              <source src="./static/videos/paper_video.mp4" type="video/mp4">
+              <!-- Fallback message -->
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+
+  </div>
+</section>
+
+
+<section class="section">  
+  <div class="container is-max-desktop">
+    <div class="has-text-centered">
+      <!-- Simulation -->
+      <h1 class="title is-3">Simulation and Perturbation</h1>
+      <h2 class="title is-4">Multiple Assembly Orders Generated by High-Level Policy</h2>
+      <div class="columns is-centered">
+        <div class="column is-third">
+          <h3 class="title is-5">8 &rarr; 9 &rarr; 6 &rarr; 7</h3>
+          <video controls autoplay muted loop playsinline style="width: 100%;">
+            <source src="./static/videos/sim1.mp4" type="video/mp4">
+        </div>
+        <div class="column is-third">
+          <h3 class="title is-5">9 &rarr; 8 &rarr; 7 &rarr; 6</h3>
+          <video controls autoplay muted loop playsinline style="width: 100%;">
+            <source src="./static/videos/sim2.mp4" type="video/mp4">
+        </div>  
+        <div class="column is-third">
+          <h3 class="title is-5">8 &rarr; 9 &rarr; 7 &rarr; 6</h3>
+          <video controls autoplay muted loop playsinline style="width: 100%;">
+            <source src="./static/videos/sim3.mp4" type="video/mp4">
+        </div>
+        <div class="column is-third">
+          <h3 class="title is-5">9 &rarr; 8 &rarr; 6 &rarr; 7</h3>
+          <video controls autoplay muted loop playsinline style="width: 100%;">
+            <source src="./static/videos/sim4.mp4" type="video/mp4">
+        </div>
+      </div>
+
+      <h2 class="title is-4">Sankey Diagram of Low-Level Policy in Simulation</h2>
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <img src="./static/images/flow.png" alt="Low-Level Policy" style="width: 100%; height: auto; margin-bottom: 20px;">
+        </div>
+      </div>
+
+      <!-- Perturbation -->
+      <h2 class="title is-4">Robustness under Perturbation</h2>
+      <div class="columns is-centered">
+        <div class="column is-third">
+          <h3 class="title is-5">Real-world Tabletop Disturbance</h3>
+          <video controls autoplay muted loop playsinline style="width: 100%;">
+            <source src="./static/videos/real_perturb.mp4" type="video/mp4">
+        </div>
+        <div class="column is-third">
+          <h3 class="title is-5">Simulation Tableleg Disturbance</h3>
+          <video controls autoplay muted loop playsinline style="width: 100%;">
+            <source src="./static/videos/perturb.mp4" type="video/mp4">
+        </div>
+      </div>
+
+      <!-- Real-world -->
+      <h2 class="title is-4">Real-world Performance with Masking</h2>
+      <div class="columns is-centered">
+        <div class="column is-third">
+          <video controls autoplay muted loop playsinline style="width: 100%;">
+            <source src="./static/videos/real_masked.mp4" type="video/mp4">
+        </div>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
